@@ -1,0 +1,31 @@
+------------------------------------------------------------------------------
+CrystalDiskMark 8.0.0 x64 (C) 2007-2020 hiyohiyo
+                                  Crystal Dew World: https://crystalmark.info/
+------------------------------------------------------------------------------
+* MB/s = 1,000,000 bytes/s [SATA/600 = 600,000,000 bytes/s]
+* KB = 1000 bytes, KiB = 1024 bytes
+
+[Read]
+  SEQ    1MiB (Q=  8, T= 1):    46.772 MB/s [     44.6 IOPS] <176303.09 us>
+  SEQ    1MiB (Q=  1, T= 1):    46.979 MB/s [     44.8 IOPS] < 22292.78 us>
+  RND    4KiB (Q= 32, T= 1):     9.806 MB/s [   2394.0 IOPS] < 13342.88 us>
+  RND    4KiB (Q=  1, T= 1):     9.235 MB/s [   2254.6 IOPS] <   442.59 us>
+
+[Write]
+  SEQ    1MiB (Q=  8, T= 1):    24.539 MB/s [     23.4 IOPS] <329854.71 us>
+  SEQ    1MiB (Q=  1, T= 1):    24.539 MB/s [     23.4 IOPS] < 42408.11 us>
+  RND    4KiB (Q= 32, T= 1):     4.667 MB/s [   1139.4 IOPS] < 27979.15 us>
+  RND    4KiB (Q=  1, T= 1):     4.475 MB/s [   1092.5 IOPS] <   913.81 us>
+
+[Mix] Read 70%/Write 30%
+  SEQ    1MiB (Q=  8, T= 1):    31.666 MB/s [     30.2 IOPS] <257758.26 us>
+  SEQ    1MiB (Q=  1, T= 1):    32.087 MB/s [     30.6 IOPS] < 32506.79 us>
+  RND    4KiB (Q= 32, T= 1):     6.494 MB/s [   1585.4 IOPS] < 20093.75 us>
+  RND    4KiB (Q=  1, T= 1):     6.719 MB/s [   1640.4 IOPS] <   608.42 us>
+
+Profile: Default
+   Test: 128 MiB (x5) [E: 2% (37/1916MiB)]
+   Mode: [Admin]
+   Time: Measure 5 sec / Interval 5 sec 
+   Date: 2020/12/17 14:21:16
+     OS: Windows 7 Ultimate SP1 [6.1 Build 7601] (x64)
