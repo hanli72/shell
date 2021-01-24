@@ -1,0 +1,26 @@
+
+# remove ^M in txt
+ls | while read line
+do 
+sed -i 's/\r//g' ./$line
+done
+
+# 0841 U9 bad block count from eUSB preformat log
+ls | while read line
+do 
+sn=`echo $line |awk -F. '{print $1}' |awk -F "-" '{print $NF}'`
+BOM=`cat $line |grep "ATA_ModelNumber" |awk -F "NETLIST" '{print $2}' |awk '{print $1}'`
+fw=`cat $line |grep "ATA_FirmwareRevision          :" |awk -F: '{print $2}'`
+badblock=`cat $line |grep "defect block(s):" |awk '{print $1}'`
+echo $sn $BOM $fw $badblock
+done
+
+# 0837 U8B bad block count from eUSB preformat log
+ls | while read line
+do 
+sn=`echo $line |awk -F. '{print $1}' |awk -F "-" '{print $NF}'`
+#BOM=`cat $line |grep "ATA_ModelNumber" |awk -F "firmware version:" '{print $2}' |awk '{print $1}'`
+fw=`cat $line |grep "firmware version:" |awk -F "firmware version:" '{print $2}' |awk '{print $1}'`
+badblock=`cat $line |grep "defect block(s):" |awk '{print $4}'`
+echo $sn $BOM $fw $badblock
+done
