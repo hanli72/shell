@@ -45,7 +45,7 @@ if [ -z $6 ];then
     echo Please input thread number of IOPs like [1~64 ]
     read threadIOPs
 fi
-cd ./crystalmark 
+cd ./logcrystalmark/
 echo "SN SeqR_${blocksizieMB}iB_Q${queueMB}_T${threadMB} SeqW_${blocksizieMB}iB_Q${queueMB}_T${threadMB} SeqMix_${blocksizieMB}iB_Q${queueMB}_T${threadMB} IOPsR_${blocksizieIOPs}iB_Q${queueMB}_T${threadMB} IOPsW_${blocksizieIOPs}iB_Q${queueMB}_T${threadMB} IOPsMix_${blocksizieIOPs}iB_Q${queueMB}_T${threadMB} "
 ls | while read line
 do 

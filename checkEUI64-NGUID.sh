@@ -2,6 +2,8 @@
 while read line
 do
 RowNum=`ls ${line}* |wc -l`
+#check if the test log based on giving  MB 's SN is exist
+# = 0, means no log 
 if [ ${RowNum} -eq 0 ];then
 	NLSN=null
 	MPN=null

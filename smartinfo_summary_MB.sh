@@ -1,10 +1,13 @@
-# remove ^M in txt
-ls | while read line
-do 
-sed -i 's/\r//g' ./$line
-done
+#!/bin/bash
 
-#SMART checking value for MB SSD
+# remove ^M in txt, ^M issue is only within log file created by DOS
+#ls | while read line
+#do 
+#sed -i 's/\r//g' ./$line
+#done
+
+#collect smart info for MB NVMe SSD
+cd ./logsmart/
 ls | while read line
 do 
 sn=`echo $line |awk -F_ '{print $1}'`
