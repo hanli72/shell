@@ -8,9 +8,17 @@
 
 #$1 is for filename definition which will be parsing and saving by hour
 filename=""
+logfolder="./log"
 if [ -z $1 ];then
     echo Please input file name which need parsing and save by hour
     read filename
+fi
+if [ ! -f $filename ];then
+    echo the filename you input is not exist at current path, please check.
+    exit 1
+fi
+if [ ! -d ${logfolder} ];then
+    mkdir $logfolder
 fi
 while read line
 do
@@ -25,12 +33,5 @@ do
     else
         hournew=$houris
     fi
-    hourold=$hournew
-    #echo "the old is $hourold and the new is $hournew"
-    if(($hournew > $hourold));then
-        echo "$line " >> ./log/${monthis}_${dayis}_${hournew}.txt
-    else
-        echo "$line" >> ./log/${monthis}_${dayis}_${hourold}.txt
-    fi
+    echo "$line " >> ${logfolder}/${monthis}_${dayis}_${hournew}.txt
 done < ./$filename
-
