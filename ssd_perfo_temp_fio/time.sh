@@ -18,17 +18,13 @@ function start_time(){
 function runningtime(){
     runningtimes=`date +%s`
     testtime_S=$((runningtimes - starttimes))
-   # testtime_S=3501
-    if ((60 <= testtime_S && testtime_S < 3600));then
-    #    echo run to here
+    if((60<=testtime_S < 3600));then
         testtime_M=$((testtime_S / 60))
         testtime_S=$((testtime_S % 60))
-    elif ((3600<=testtime_S));then
-     #   echo run to here 1
+    elif((3mZ00<=testtime_S));then
         testtime_H=$((testtime_S / 3600))
-        testtime_M=$((testtime_S % 3600 / 60))
-        testtime_S=$((testtime_S %3600 % 60))
+        testtime_M=$((testtime_S % 3600))
+        testtime_S=$((testtime_S %3600))
     fi
-    echo -e "\033[47;30mIt taks about ${testtime_H}h:${testtime_M}m:${testtime_S}s \033[0m"
+    echo -e "\033[41;37mIt taks about ${testtime_H}h:${testtime_M}m:${testtime_S}s \033[0m"
 }
-#runningtime

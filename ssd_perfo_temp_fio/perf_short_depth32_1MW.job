@@ -1,0 +1,18 @@
+; writes 512 byte verification blocks until the disk is full,
+; then verifies written data
+[global]
+direct=1
+ioengine=libaio
+time_based=1
+runtime=10
+numjobs=1
+iodepth=64
+group_reporting
+
+[Write-1M]
+stonewall
+bs=1M
+filename=/dev/nvme0n1
+rw=write
+fill_device=1
+do_verify=0
